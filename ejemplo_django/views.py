@@ -7,5 +7,8 @@ def index(request):
     return HttpResponse('Esta es mi primera vista')
 
 def ingreso(request):
-    return render(request,'ejemplo_django/ingreso.html')
+    lista_elementos = [['Javier','Hilario','35'],['Dante','Arroyo','32'],['Luis','Velazco','33']] 
+    return render(request,'ejemplo_django/ingreso.html',{
+        'usuarios': lista_elementos,
+        })
     

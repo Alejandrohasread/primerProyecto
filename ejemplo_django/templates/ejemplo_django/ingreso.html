@@ -5,8 +5,13 @@
 
 </head>
 <body>
-    <h2>Ejemplo</h2>
-    <h2>Django</h2>
-    <h2>Hola</h2>
+    <h2>Usuarios del proyecto Django</h2>
+    <br>    
+    {% for usuario in usuarios %}
+    <h4>Nombre : {{ usuario.0 }}</h4>
+    <h4>Apellido : {{ usuario.1 }}</h4>
+    <h4>Edad : {{ usuario.2 }}</h4>
+    <br>
+    {% endfor %}
 </body>
 </html>
