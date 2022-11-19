@@ -13,5 +13,25 @@
     <h4>Edad : {{ usuario.2 }}</h4>
     <br>
     {% endfor %}
+    <br>
+    <h4> Ingrese nuevo ususario</h4>
+    <form method="post" action="{% url 'ejemplo_django:ingreso' %}">
+        {% csrf_token %}   
+        <div>
+            <h4>Ingrese el nombre</h4>
+            <input type="text" name="nombreUsuario" >
+        </div>
+        <div>
+            <h4>Ingrese el apellido</h4>
+            <input type="text" name="apellidoUsuario">
+        </div>
+        <div>
+            <h4>Ingrese la edad</h4>
+            <input type="number" name="edadUsuario">
+        </div>
+        <br>
+        <button type="submit">Registrar usuario</button>
+    </form>
+
 </body>
 </html>
