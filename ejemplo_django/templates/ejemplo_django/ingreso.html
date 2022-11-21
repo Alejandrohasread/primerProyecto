@@ -6,11 +6,23 @@
 </head>
 <body>
     <h2>Usuarios del proyecto Django</h2>
-    <br>    
+    <br>
+    <form method="post" url="{% url 'ejemplo_django:ingreso' %}">
+    {% csrf_token %}      
+        <select name="edadFiltrado">
+            <option value="25">25</option>
+            <option value="35">35</option>
+        </select>
+        <button type="submit" name="Filtrar">
+            Filtrar
+        </button>
+    </form>    
+    <br>
+    <button><a href="{% url 'ejemplo_django:ingreso' %}">Reestablecer</a></button>
     {% for usuario in usuarios %}
-    <h4>Nombre : {{ usuario.0 }}</h4>
-    <h4>Apellido : {{ usuario.1 }}</h4>
-    <h4>Edad : {{ usuario.2 }}</h4>
+    <h4>Nombre : {{ usuario.nombre}}</h4>
+    <h4>Apellido : {{ usuario.apellido }}</h4>
+    <h4>Edad : {{ usuario.edad }}</h4>
     <br>
     {% endfor %}
     <br>
@@ -30,7 +42,7 @@
             <input type="number" name="edadUsuario">
         </div>
         <br>
-        <button type="submit">Registrar usuario</button>
+        <button type="submit" name="Crear">Registrar usuario</button>
     </form>
 
 </body>
